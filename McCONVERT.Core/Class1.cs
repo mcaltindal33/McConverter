@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.IO;
-
 public static class ConvertTo
 {
     public static byte[] HexToBytes(this string data)
@@ -278,7 +274,6 @@ public static class ConvertTo
         bool item = double.TryParse(data, out value);
         return new Tuple<bool, double>(item, Convert.ToDouble(value.ToString("N2")));
     }
-
     public static Tuple<bool, decimal> ToDeimalN2Special(this string data)
     {
         decimal value = default(decimal);
@@ -396,7 +391,6 @@ public static class ConvertTo
         decimal.TryParse(data.ToString(), out value);
         return value;
     }
-
     public static DateTime ToDateTime(this string data)
     {
         DateTime value;
@@ -441,7 +435,6 @@ public static class ConvertTo
             return DateTime.MinValue;
         }
     }
-
     public static DateTime ToDateTime(this string data, string format)
     {
         DateTime value;
